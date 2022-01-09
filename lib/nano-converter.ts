@@ -16,6 +16,9 @@ export default class NanoConverter {
 			case 'RAW':
 				value = value
 				break
+			case 'PAW':
+				value = value.shiftedBy(27)
+				break
 			case 'NANO':
 			case 'MRAI':
 				value = value.shiftedBy(30)
@@ -33,6 +36,8 @@ export default class NanoConverter {
 		switch (outputUnit) {
 			case 'RAW':
 				return value.toFixed(0)
+			case 'PAW':
+				return value.shiftedBy(-27).toFixed(27, 1)
 			case 'NANO':
 			case 'MRAI':
 				return value.shiftedBy(-30).toFixed(30, 1)
