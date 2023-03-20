@@ -19,6 +19,9 @@ export default class NanoConverter {
 			case 'PAW':
 				value = value.shiftedBy(27)
 				break
+			case 'ADIA':
+				value = value.shiftedBy(34)
+				break
 			case 'NANO':
 			case 'MRAI':
 				value = value.shiftedBy(30)
@@ -38,6 +41,8 @@ export default class NanoConverter {
 				return value.toFixed(0)
 			case 'PAW':
 				return value.shiftedBy(-27).toFixed(27, 1)
+			case 'ADIA':
+				return value.shiftedBy(-34).toFixed(34, 1)
 			case 'NANO':
 			case 'MRAI':
 				return value.shiftedBy(-30).toFixed(30, 1)
